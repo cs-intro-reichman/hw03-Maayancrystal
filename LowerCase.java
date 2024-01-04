@@ -12,6 +12,12 @@ public class LowerCase {
     */
     public static String lowerCase(String s) {
         // Replace the following statement with your code
+        int length = str.length(s);
+        for (int i = length ; i > 0 ; i++) {
+            char ch = str.charAt(i);
+
+            System.out.print(ch);
+        }
         return null;
     }
 }
