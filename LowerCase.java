@@ -12,12 +12,19 @@ public class LowerCase {
     */
     public static String lowerCase(String s) {
         // Replace the following statement with your code
-        int length = str.length(s);
-        for (int i = length ; i > 0 ; i++) {
-            char ch = str.charAt(i);
-
-            System.out.print(ch);
+        int length = s.length();
+        String newString ="";
+        for(int i = 0 ; i < length ; i++) {
+                char ch = s.charAt(i);
+                 if (ch > 'A' && ch < 'Z'){
+                    newString = newString + (char)(ch + 32);
+                  }
+                  else{
+                    newString = newString + (char)(ch + 0);
+                  }
         }
-        return null;
+        return newString;
+        }
+        
     }
-}
+
