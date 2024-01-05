@@ -14,16 +14,14 @@ public class UniqueChars {
         // Replace the following statement with your code
         String newS = "";
         int length = s.length();
-        boolean flag = false;
+        
         for (int i = 0 ; i < length ; i++){
             char ch = s.charAt(i);
-            for (int j = 0 ; j < length ; j++){
-                if(ch == s.indexOf(j)){
-                    j = length;
-                }
-                newS = newS + ch;
+            if(newS.indexOf(ch) < 0 || ch == ' '){
+             newS = newS + ch;
             }
+            
         }
-        return news;
+        return newS;
     }
 }
