@@ -23,7 +23,7 @@ public class Calendar1 {
 	 	while (year <= 1999 && month <= 12) {
 	 		//// Write the body of the while 		
 	 		advance();
-	 		
+	 		break;
 	 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
 	 		
@@ -38,8 +38,8 @@ public class Calendar1 {
 	 private static void advance() {
 		// Replace this comment with your code
 	 	int sundaycounter = 0;
-	 	for(year = year ; year <= 1999 ; year++){
-	 		for(month = month ; month <= 12 ; month++){
+	 	for(int year = 1900 ; year <= 1999 ; year++){
+	 		for(int month = 1 ; month <= 12 ; month++){
 	 			nDaysInMonth = nDaysInMonth(month , year);
 	 			for(int i = 1; i <= nDaysInMonth ; i++){
 	 				if(dayOfWeek == 1){
