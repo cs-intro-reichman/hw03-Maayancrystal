@@ -76,9 +76,12 @@ public class Calendar {
 	private static boolean isLeapYear(int year) {
 	    // Replace the following statement with your code
 		boolean leap = false; 
-	    if (year % 4 == 0 && (year % 100 == 0 && year % 400 == 0)){
+	    if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
 	    	leap = true;
 	    }
+		if (year % 4 == 0 && year % 100 != 0){
+			leap = true; 
+		}
 	    
 		return leap;
 	}
