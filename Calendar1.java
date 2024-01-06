@@ -44,7 +44,7 @@ public class Calendar1 {
 	 			for(int i = 1; i <= nDaysInMonth ; i++){
 	 				if(dayOfWeek == 1){
 	 				System.out.println(i + "/" + month + "/" + year + " sunday");
-	 					if(dayOfMonth == 1){
+	 					if(i == 1){
 	 						sundaycounter++;
 	 					}
 	 				}
@@ -52,15 +52,13 @@ public class Calendar1 {
 	 				else{
 	 				System.out.println(i + "/" + month + "/" + year);
 	 				}
-	 			dayOfMonth++;
 	 			dayOfWeek++;
 	 			if(dayOfWeek > 7){
 	 				dayOfWeek = 1;
 	 			}
-	 			if(dayOfMonth > nDaysInMonth){
-	 				dayOfMonth = 1;
+	 			
 	 			}
-	 			}
+				dayOfMonth = 1;
 	 		}
 	 	}
 	 	System.out.println("During the 20th century, " + sundaycounter + " Sundays fell on the first day of the month");
@@ -70,7 +68,7 @@ public class Calendar1 {
 	private static boolean isLeapYear(int year) {
 	    // Replace the following statement with your code
 		boolean leap = false; 
-	    if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)){
+	    if (year % 4 == 0 && (year % 100 == 0 && year % 400 == 0)){
 	    	leap = true;
 	    }
 	    
