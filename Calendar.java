@@ -5,6 +5,7 @@ public class Calendar {
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
+	static int year = 1900;
 	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	
@@ -20,17 +21,16 @@ public class Calendar {
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
 	 	int year = Integer.parseInt(args[0]);
-	
 	 		//// Write the body of the while 		
 	 		advance(year);
-
+	 		
 	 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
 	 		
-
+        }
 	 	//// Write the necessary ending code here
 
-	 }
+	 
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
 	 // If the month changes, sets the number of days in this month.
@@ -38,20 +38,46 @@ public class Calendar {
 	 private static void advance(int year) {
 		// Replace this comment with your code
 	 	
+	 	for(int y = 1900 ; y <= year ; y++){
 	 		for(int month = 1 ; month <= 12 ; month++){
-	 			nDaysInMonth = nDaysInMonth(month , year);
+	 			nDaysInMonth = nDaysInMonth(month , y);
 	 			for(int i = 1; i <= nDaysInMonth ; i++){
-	 				System.out.println(i + "/" + month + "/" + year);
+	 				
+	 			dayOfWeek++;
+	 			if(dayOfWeek > 7){
+	 				dayOfWeek = 1;
+	 			}
 	 			
 	 			}
+				dayOfMonth = 1;
 	 		}
-	 } 
+	 	}
+		for(int month = 1 ; month <= 12 ; month++){
+	 			nDaysInMonth = nDaysInMonth(month , year);
+	 			for(int i = 1; i <= nDaysInMonth ; i++){
+	 				if(dayOfWeek == 1){
+	 				System.out.println(i + "/" + month + "/" + year + " sunday");
+	 		
+	 				}
+
+	 				else{
+	 				System.out.println(i + "/" + month + "/" + year);
+	 				}
+	 			dayOfWeek++;
+	 			if(dayOfWeek > 7){
+	 				dayOfWeek = 1;
+	 			}
+	 			
+	 			}
+				dayOfMonth = 1;
+	 		}
+		}	
 		 
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year) {
 	    // Replace the following statement with your code
 		boolean leap = false; 
-	    if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)){
+	    if (year % 4 == 0 && (year % 100 == 0 && year % 400 == 0)){
 	    	leap = true;
 	    }
 	    
@@ -113,4 +139,3 @@ public class Calendar {
 		return days;
 	}
 }
-
