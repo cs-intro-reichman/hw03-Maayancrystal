@@ -55,7 +55,7 @@ public class Calendar {
 	 			nDaysInMonth = nDaysInMonth(month , year);
 	 			for(int i = 1; i <= nDaysInMonth ; i++){
 	 				if(dayOfWeek == 1){
-	 				System.out.println(i + "/" + month + "/" + year + " sunday");
+	 				System.out.println(i + "/" + month + "/" + year + " Sunday");
 	 		
 	 				}
 
